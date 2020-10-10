@@ -107,7 +107,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         screen.setText(input);
     }
 
-    public String solve() throws ScriptException {
+    public String solve() throws  {
         input = input.replace("÷", "/");
         input = input.replace("×", "*");
         return String.valueOf((int)eval(input));
