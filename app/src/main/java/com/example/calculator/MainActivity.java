@@ -7,9 +7,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import javax.script.ScriptEngineManager;
-import javax.script.ScriptEngine;
-import javax.script.ScriptException;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -91,13 +88,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
                 break;
             case "=":
-                try {
                     System.out.println(input);
                     input = solve();
                     break;
-                } catch (ScriptException e) {
-                    e.printStackTrace();
-                }
             default:
                 if (input == null){
                     input = "";
@@ -107,7 +100,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         screen.setText(input);
     }
 
-    public String solve() throws  {
+    public String solve()  {
         input = input.replace("÷", "/");
         input = input.replace("×", "*");
         return String.valueOf((int)eval(input));
